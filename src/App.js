@@ -8,7 +8,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem('isLogin')) {g
+    if (localStorage.getItem('isLogin')) {
       setIsLogin(true);
     }
   }, []);
