@@ -63,7 +63,7 @@ class ToDoList extends React.Component {
 			<button onClick={this.logoutHandler}>Logout</button>
 			<div>
 				<input placeholder="Name..." onChange={this.onChangeHandler} value={this.state.taskName} />
-				{this.state.errorMessage}
+				<p>{this.state.errorMessage}</p>
 				<button type="button" onClick={() => this.saveTaskHandler('addTask')} >Add Item</button>
 			</div>
 			{this.state.toDoList.length > 0 ?
@@ -78,7 +78,7 @@ class ToDoList extends React.Component {
 						</div>
 					</li>)}
 				</ul>
-				: <h5>No tasks yet !</h5>
+				: <h5>No item added yet !</h5>
 			}
 			<button onClick={this.clearTasksHandler} disabled={!this.state.toDoList.length}>Clear Items</button>
 		</div>

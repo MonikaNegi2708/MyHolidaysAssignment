@@ -39,9 +39,9 @@ class LoginPage extends React.Component {
 			<input id="username" value={this.state.userDetails.username} onChange={this.onChangeHandler} />
 			<label>Password</label>
 			<input id="password" value={this.state.userDetails.password} onChange={this.onChangeHandler} />
+			<p>{this.state.errorMessage}</p>
 			<h4>Forgot Password?</h4>
 			<button onClick={this.loginHandler}>Login</button>
-			{this.state.errorMessage}
 			<h4>Not a member?</h4>
 			<button>Signup now</button>
 		</div>
