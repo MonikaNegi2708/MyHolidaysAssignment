@@ -1,38 +1,250 @@
-.App {
+.to-do-list-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.list-box {
+  width: 810px;
+  background-color: #fff;
+  padding: 50px 24px 52px 24px;
+  position: relative;
+  min-height: 350px;
+}
+
+.list-box h1 {
+  background-color: #f4f4f4;
+  color: #31415A;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 35px;
+  font-weight: 500;
+  font-family: 'Font Awesome 5 Pro';
+}
+
+.task-box .d-flex {
+  align-items: center;
+}
+
+.task-box .d-flex h3 {
+  font-size: 16px;
+  margin: 0;
+  margin-right: 10px;
+  font-family: 'Font Awesome 5 Pro';
+  color: #31415A;
+}
+
+.task-box .btn {
+  padding: 0px 5px;
+  margin-right: 7px;
+  border-radius: 12px;
+}
+
+.task-box .btn i {
+  font-size: 14px;
+}
+
+.task-box h4 {
+  border-bottom: 3px solid #dedede;
+  padding-bottom: 20px;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1859a5;
+}
+
+.task-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.task-box ul li {
+  padding: 14px 14px;
+  border: 1px solid #dedede;
+  border-bottom: 0;
+  background-color: #E9F9F9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-box ul li:last-child {
+  border-bottom: 1px solid #dedede;
+}
+
+.task-box ul li p {
+  color: #707A7B;
+  font-size: 14px;
+  margin: 0;
+}
+
+.task-box ul li p.task-completed {
+  text-decoration: line-through;
+}
+
+#completed-task-list li {
+  background-color: #daffda;
+}
+
+#completed-task-box {
+  color: #068206;
+}
+
+.input-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.to-do-list-box .log-out {
+  background-color: #1565c0;
+  border: 1px solid #31415A;
+  color: #fff;
+  position: absolute;
+  right: 27px;
+  top: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 800;
+}
+
+.clear-button{
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+ font-size: 14px;
+}
+
+.task-box h3{
+  margin: 50px auto;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color :#6561618a;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-outer-box {
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #2a2a72;
+  background: linear-gradient(-120deg, #021B79, #0575E6, #205E9B);
 }
 
-.App-link {
-  color: #61dafb;
+.login-form-box {
+  min-height: 300px;
+  width: 400px;
+  border-radius: 13px;
+  border: 1px solid #10216b;
+  background-color: #fff;
+  padding: 20px 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-form-box h1 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: #243c60;
+  text-align: center;
+}
+
+.login-form-box .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form-box .form-group label {
+  font-size: 13px;
+  color: #243c60;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.login-form-box .form-group .form-control {
+  padding: 7px 10px;
+  font-size: 14px;
+  color: #4d4d4d;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.01);
+  letter-spacing: 0.04em;
+}
+
+.login-form-box .form-group .form-control:hover {
+  border: 1px solid #ddd !important;
+}
+
+.login-form-box .form-group .form-control:focus {
+  border: 1px solid #ddd !important;
+  box-shadow: initial;
+}
+
+.login-form-box .forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+}
+
+.login-form-box .login-btn {
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+  background: linear-gradient(-120deg, #021B79, #0575E6, #205E9B);
+}
+
+.login-form-box .login-btn:hover {
+  background: #021B79;
+  transition: 1s linear ease-in-out;
+}
+
+.login-form-box .new-member {
+  margin: 10px 0 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: #4c5159;
+}
+
+.login-form-box .new-member a {
+  display: inline-block;
+}
+
+.login-form-box a {
+  color: #2940bd;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.login-form-box a:hover {
+  color: #071d94;
+  text-decoration: underline;
+}
+
+.error-message{
+  color:#e20a0a;
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 0.03em;
 }

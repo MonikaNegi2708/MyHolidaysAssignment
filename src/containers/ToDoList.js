@@ -1,3 +1,4 @@
+import '../App.css';
 import React from 'react';
 import history from './history';
 
@@ -58,30 +59,41 @@ class ToDoList extends React.Component {
 	}
 
 	render() {
-		return <div>
-			<h6>To Do List</h6>
-			<button onClick={this.logoutHandler}>Logout</button>
-			<div>
-				<input placeholder="Name..." onChange={this.onChangeHandler} value={this.state.taskName} />
-				<p>{this.state.errorMessage}</p>
-				<button type="button" onClick={() => this.saveTaskHandler('addTask')} >Add Item</button>
+		return <React.Fragment>
+			<div className="to-do-list-box">
+				<div className="list-box">
+					<button onClick={this.logoutHandler} type="button" className="btn btn-primary mr-1 log-out"><i className="fa fa-sign-out mr-1"></i>Logout</button>
+					<h1>To Do List</h1>
+					<form>
+						<div className="input-group mt-3">
+							<input type="text" className="form-control" placeholder="Add New Task" onChange={this.onChangeHandler} value={this.state.taskName} />
+							<div className="input-group-append">
+								<button type="button" className="btn btn-primary mr-1" onClick={() => this.saveTaskHandler('addTask')}><i className="fa fa-plus"></i> Add Item</button>
+							</div>
+						</div>
+						<p className="error-message text-left" >{this.state.errorMessage}</p>
+					</form>
+					<div className="task-box">
+						{this.state.toDoList.length > 0 ?
+							<ul className="task-list">
+								{this.state.toDoList.map((task, index) => <li key={index}>
+									<div className="d-flex">
+										{task.isEdit ? <input id="updateTask" value={task.taskName} onChange={(e) => this.onChangeHandler(e, index)} /> : <p className="input-container">{task.taskName}</p>}
+									</div>
+									<div className="d-flex">
+										<button type="button" className="btn btn-primary" onClick={() => this.saveTaskHandler('editTask', index)}><i className={task.isEdit ? "fa fa-check" : "fa fa-pen"}></i></button>
+										<button type="button" className="btn btn-danger" onClick={() => this.saveTaskHandler('deleteTask', index)}><i className="fa fa-trash"></i></button>
+									</div>
+								</li>
+								)}
+							</ul>
+							: <h3>No item added yet !</h3>
+						}
+					</div>
+					<button type="button" onClick={this.clearTasksHandler} disabled={!this.state.toDoList.length} className="btn btn-primary clear-button">Clear Items</button>
+				</div>
 			</div>
-			{this.state.toDoList.length > 0 ?
-				<ul>
-					{this.state.toDoList.map((task, index) => <li key={index}>
-						<div>
-							{task.isEdit ? <input id="updateTask" value={task.taskName} onChange={(e) => this.onChangeHandler(e, index)} /> : <p>{task.taskName}</p>}
-						</div>
-						<div>
-							<button type="button" onClick={() => this.saveTaskHandler('editTask', index)}>{task.isEdit ? 'Save' : 'Edit'}</button>
-							<button type="button" onClick={() => this.saveTaskHandler('deleteTask', index)}>Delete</button>
-						</div>
-					</li>)}
-				</ul>
-				: <h5>No item added yet !</h5>
-			}
-			<button onClick={this.clearTasksHandler} disabled={!this.state.toDoList.length}>Clear Items</button>
-		</div>
+		</React.Fragment>
 	}
 }
 
