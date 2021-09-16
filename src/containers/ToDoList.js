@@ -66,7 +66,7 @@ class ToDoList extends React.Component {
 					<h1>To Do List</h1>
 					<form>
 						<div className="input-group mt-3">
-							<input type="text" className="form-control" placeholder="Add New Task" onChange={this.onChangeHandler} value={this.state.taskName} />
+							<input type="text" className="form-control" placeholder="Name..." onChange={this.onChangeHandler} value={this.state.taskName} />
 							<div className="input-group-append">
 								<button type="button" className="btn btn-primary mr-1" onClick={() => this.saveTaskHandler('addTask')}><i className="fa fa-plus"></i> Add Item</button>
 							</div>
